@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :require_user_logged_in, only: [:index, :show]
   before_action :set_task, only: [:edit,:show,:update,:destroy]
   
   def index
